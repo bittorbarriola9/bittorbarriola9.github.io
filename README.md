@@ -10,4 +10,4 @@ def building()
 ------------
 
 
-[![](https://free4kwallpapers.com/uploads/originals/2020/10/19/minimal-dark-coding-wallpaper.png)](https://free4kwallpapers.com/uploads/originals/2020/10/19/minimal-dark-coding-wallpaper.png)
+https://free4kwallpapers.com/uploads/originals/2020/10/19/minimal-dark-coding-wallpaper.png
