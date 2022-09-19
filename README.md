@@ -1,139 +1,307 @@
-# dactl
-dactl is a fast, modern and configurable [Jekyll](http://jekyllrb.com/) theme with some tricks up it's sleeve. It has a live theme switcher and it's main blog layout display prominent hero images for posts with colored overlays and nice animations.
+### devlopr-jekyll - A Beautiful Jekyll Theme Built for Developers
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![light theme](uploads/screenshot_desktop_light.jpg)
-![dark theme](uploads/screenshot_desktop_dark.jpg)
+[![Gem Version](https://badge.fury.io/rb/devlopr.svg)](https://badge.fury.io/rb/devlopr)![workflow-badge](https://github.com/sujaykundu777/devlopr-jekyll/workflows/deploy/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4232ac2b-63e0-4c78-92e0-e95aad5ab8c3/deploy-status)](https://app.netlify.com/sites/devlopr/deploys)
+![](https://ruby-gem-downloads-badge.herokuapp.com/devlopr?type=total&color=brightgreen&style=plastic)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![Bakers](https://opencollective.com/devlopr-jekyll/tiers/badge.svg)](https://opencollective.com/devlopr-jekyll/)
 
-## Features
-Though minimalistic-looking by nature, dactl is easily configurable and includes quite a lot of niceties:
 
-Main features:
-* Customizable blog layout - choose how your posts will be displayed
-* Light/Dark live theme switcher
-* Inline footnotes using [Barefoot](https://github.com/philgruneich/barefoot)
-* [IcoMoon](https://icomoon.io/) custom icon set (~4kb)
-* Typography and components size set in `rem` and `em` which makes them easily scalable
-* Responsive design
+You can use Devlopr as a starter for building your own Site. we purposely keep the styling minimal and bare to make it easier to add your own flare and markup. (Under Active Development) !
 
-Jekyll-specific features:
-* Pagination (default: 5 posts per page)
-* Fully compatible with Jekyll 3.x and GitHub Pages
-* SEO optimized
-* [Google Analytics](https://www.google.com/analytics/) support
-* [Disqus](https://disqus.com/) comments support
-* Syntax highlighter using [Rouge](https://github.com/jneen/rouge) with numbered code lines
+Highly Customizable and No Hosting or Maintainence Cost is required !
 
-Other features:
-* Archive page
-* About page
-* Tags functionality and tags pages
-* Link posts functionality
+![devlopr jekyll](https://github.com/sujaykundu777/devlopr-jekyll/blob/master/assets/img/screenshot.PNG?raw=true)
 
-Some of the features listed above can be easily configured or disabled by you.
+devlopr uses Markdown Files to generate data like Blog Posts, Gallery, Shop Products etc. No external database is required.
 
-## Information about dactl
-At it's core, dactl is a forked version of [daktilo](https://github.com/kronik3r/daktilo) but it has been almost entirely rewritten from scratch.  
-I have just started my journey in the world of web development, learning new things on the way.  
-Looking for a way to put my newly acquired skills to test I found Jekyll and I quickly realized that it's going to be a good learning experience since I don't like building 'dummy' projects.  
-I've built this theme as a way to develop my skills further.
 
-You can find credits at the bottom of this Readme file.  
-**All** feedback is welcome, both positive and negative.
+### Launch your Static Site using Devlopr in minutes :rocket:
 
-## Installation
-### Running locally
-Assuming you've got Jekyll [installed](https://jekyllrb.com/docs/installation/), clone or download this repo, `cd` to wherever you've put `dactl` folder and run `jekyll -s'`
+To get started follow this [Tutorial](https://devlopr.netlify.app/get-started)
 
-### Hosting on GitHub
-Fork this repo and rename it to `yourusername.github.io`... and that's it!  
-Your new dactl-themed Jekyll blog should be up and running at yourusername.github.io.  
+or if you want to try fast :
 
-## Usage
-### Slight warning
-dactl relies heavily on modern CSS properties such as [mix-blend-mode](http://www.w3.org/TR/compositing-1/#mix-blend-mode), [-webkit-filter](http://www.w3.org/TR/filter-effects-1/) and [css variables](https://drafts.csswg.org/css-variables/) so it may not work properly on older browsers.  
-It was tested with and works fully on webkit-powered browsers - Safari, Chrome, Vivaldi.
+### Follow this steps in browser (takes 5-10 mins): 
+1. Fork this Repo with your name as  your_username.github.io
+2. Visit your Fork repo at https://github.com/your_username/your_username.github.io
+3. Press "." in keyboard (this will open up vs-code editor in browser) of the repo.
+4. Customize config.yml file according to your needs (eg. change your Name, Email... etc.)
+5. Commit your changes, and push 
+6. Wait for CI/CD to build your website. Visit Github Actions to see the build process.
+7. Once Ready, Your website will be ready at https://your_username.github.io :sparkles: 
+8. Happy Hacking your new site ! For Local changes you can clone locally.
 
-### Layout configurations
-By default dactl uses blog layout which you can see below or check for yourself in the live version.
 
-Main blog layout displays 5 posts. Each post has a heading contained in a medium-sized tile - with an color overlay over the background image. You need to set the image and color of the overlay in post's YAML front matter.
+## Local Development Steps :
 
-If you don't want to use images for post headings you can easily configure the layout to you needs by changing settings located in `configure.yml` file, both post and blog layout will adapt accordingly.
+### Clone Locally:
 
-Options include:
-* Use or don't use post heading images (Blog & Post)
-* Show full post content or post excerpts (Blog)
-* Show post titles only (Blog)
+```s
+$ git clone https://github.com/your_github_username/your_github_username.github.io.git
+$ cd your_github_username
+```
+### For Linux : (Ubuntu 20.04)
 
-## Additional information about some features
-### Hero images and blog layout
-Liquid 'script' which is used to append correct hero image and overlay color as set in post YAML Front matter was written by me and while it's really basic it functions properly.  
-You can read more about it and see the code in `include/utils/hero.html`.
+To work locally with ubuntu, follow this commands.
 
-### Theme switcher
-Theme switcher is made in vanilla Javascript and works using [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables). Values (colors) specified for each variable are injected into `:root` on every page load.  
-User theme choice is saved in browser's [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp) and is persistent through sessions.
+Install Ruby :
+```s
+$ sudo apt install ruby-full`
+$ ruby --version
+ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
 
-You can edit the colors of both Light and Dark themes in `themeswitcher.js` file found in `_assets/js/`.
+$ gem install jekyll bundler
+$ bundle update
+$ bundle install
+$ bundle exec jekyll -v
+jekyll 4.2.2
 
-### Inline Barefoot footnotes
-dactl uses [Barefoot](https://github.com/philgruneich/barefoot) plugin to create nice looking inline footnotes from those generated by [kramdown](https://kramdown.gettalong.org/), daktl's markdown processor.
+$ bundle exec jekyll serve --livereload
+```
 
-Barefoot description (from project's page):
->[Barefoot](https://github.com/philgruneich/barefoot) is a lightweight [Bigfoot.js](https://github.com/lemonmade/bigfoot) alternative written in vanilla Javascript to create beautiful inline footnotes.  
-Barefoot grabs the common markup used for footnotes on the web, mostly generated by Markdown processors, and transform it into beautiful and meaningful footnotes.
+### For Windows :
 
-### CSS
-CSS is built by via Jekyll's SASS compiler. Source partial SASS files are located in `_sass` folder, included into `main.scss`, and compile to `main.css`.
+To work locally with windows machine, follow this commands. You might need to download and install [ruby (with devkit)](https://www.ruby-lang.org/en/downloads/) and [git](https://git-scm.com/downloads).
 
-### Additional pages
-#### Archive page
-Archive page displays all of your posts grouped by month. Under this page's title you'll find a Searchbox which is hooked up to DuckDuckGo's `:site` search and will open the results in a new tab.  
-You need to provide your blog's web address in `search_path` field found in `_config.yml` for it to work.
-#### About page
-About page displays your photo under the title (set in `config.yml`) and the content of about.md.
-#### Tags & Tags Pages
-Tags and tag pages are supported by using Jekyll's native collections functionality.  
+```s
+$ ruby -v 
+(ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [universal.x86_64-darwin21])
 
-## Even more info
-### Rems, font-size and scaling
-dactl is built almost entirely with `rem`s (instead of pixels). `rem`s are like `em`s, but instead of building on the immediate parent's font-size, they build on the root element, `<html>`.
+$ gem install jekyll bundler
 
-By default, dactl uses the following:
-~~~
-html {
-  font-size: 20px;
-  line-height: 1.6;
-}
-@media (max-width: 48rem) {
-  html {
-    font-size: 18px;
-  }
-}
-~~~
-To easily scale your site's typography and components, simply customize the base font-sizes found in `_sass/variables.scss` file.
+$ bundler -v
+Bundler version 2.3.15
 
-(Lifted from [here](https://github.com/poole/poole#rems-font-size-and-scaling))
+$ bundle update
+$ bundle install
+$ bundle exec jekyll -v 
+jekyll 4.2.2
 
-## Credits
-### Resources used
-- [IcoMoon.io](https://icomoon.io/)
-- [Normalize.css](https://github.com/necolas/normalize.css) - Nicolas Gallagher
-- [Theme switcher](https://www.fdp.io/blog/2016/11/08/theming-via-css-properties/) - Fernando Paredes
-- [Barefoot](https://github.com/philgruneich/barefoot) - Philip Gruneich
-- [The Noun Project](https://thenounproject.com/) - Icon used as dactl's logo - [Artem Kovyazin](https://thenounproject.com/term/raisin/446158), icon used as 'avatar' in About [Drishya](https://thenounproject.com/term/profile/963272)
+$ bundle exec jekyll serve --livereload
+```
 
-### Inspiration and thoughtful code-jacking
-Inspiration and bits of things listed below are present inside dactl's code:
-- [Daktilo](https://github.com/kronik3r/daktilo) - dactl is based on Daktilo and inherits it's one-column layout.
-- [Hydejack](https://github.com/qwtel/hydejack/) - I've learned a lot about Jekyll when I took apart [@qwtel](https://github.com/qwtel/)'s excellent fork of [Hyde](https://github.com/poole/hyde) theme. I embraced his more partials = everything is easier to edit policy. Hydejack theme gave me an idea on how to create hero images liquid scripting, loading google fonts and using rem's/em's and more.
-- [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) - This guy makes awesome themes and writes a lot about Jekyll and it's more obscure use cases on his blog, [Made Mistakes](https://mademistakes.com). Looking through his theme's code - Minimal Mistakes in particular - gave me lot of information about how to build a robust theme and how to make it configurable within `_config.yml`
-- [Trophy](https://github.com/thomasvaeth/trophy-jekyll) - Link border slide animation SASS mixin which I slightly modified to be able to easily change the direction of the animation.
-- Various blog posts about Jekyll and [Stackoverflow](https://www.stackoverflow.com) posts with useful [Liquid](https://github.com/Shopify/liquid) snippets.
+If you are using permission issues, running bundler:
 
-## License
-All parts of dactl Jekyll theme are free to use and abuse under the open-source [MIT license](http://opensource.org/licenses/mit-license.php).
+```s
+$ sudo rm -rf _site
+$ bundle update
+$ bundle install
+$ bundle exec jekyll serve
+```
+Start the server locally at http://127.0.0.1:4000/ or http://localhost:4000/
 
-## TO DO
-- [ ] Inline critical `.css` in `<head>` for faster load times
-- [ ] Fix theme-switcher - sometimes it does not inject all of the colors properly on first page load and a refresh, fixes itself after switching the theme back and forth.
+### For MacOS :
+Run the following in your terminal :
+
+1. Install Homebrew
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+2. Install churby and ruby-install with Homebrew
+
+`brew install chruby ruby-install`
+
+3. Install latest ruby version 
+
+`ruby-install ruby`
+
+4. This will take a few minutes, and once it’s done, configure your shell to automatically use chruby:
+
+```sh
+echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
+echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
+echo "chruby ruby-3.1.2" >> ~/.zshrc
+```
+If you’re using Bash, replace *.zshrc* with *.bash_profile*.
+
+Quit and relaunch Terminal, then check that everything is working:
+
+`$ ruby -v`
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-darwin21]
+
+5. Install latest gems
+
+```s
+$ gem install jekyll bundler
+
+$ bundler -v
+Bundler version 2.3.15
+
+$ bundle update
+
+$ bundle exec jekyll -v 
+jekyll 4.2.2
+
+$ bundle exec jekyll serve --livereload
+```
+
+
+### Security 
+
+We use codeQL and dependabot alerts for vulnerabality analysis & fixes.
+
+```s
+$ bundle audit
+```
+
+### Deploy your devlopr-jekyll blog - One Click Deploy
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/sujaykundu777/devlopr-jekyll)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sujaykundu777/devlopr-jekyll)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sujaykundu777/devlopr-jekyll)
+
+### Github Actions
+
+This Project has actions to auto deploy jekyll to github pages and firebase. The deployment target can be set by editing the `DEPLOY_STRATEGY` file. Valid values are:
+- `none`: default value. use this if you don't want to deploy the site.
+- `gh-pages`: deploys to github pages. This uses a custom action available in the Marketplace - [Jekyll Deploy Action](https://github.com/marketplace/actions/deploy-jekyll-site)
+- `firebase`: deploys to firebase. Before you can use this you need to first create a firebase project [here](https://console.firebase.google.com/). You can signup for a Free Spark Plan. Then, in your github repo's settings, go to the secrets section and add the following:
+  * `FIREBASE_TOKEN`: your firebase token. you can get this by running `firebase login:ci` with the firebase cli.
+  * `FIREBASE_PROJECT_ID`: the project id of the project you just created
+
+### Demo (Hosted Apps)
+
+- Github Pages Demo - [here](https://sanketkundu.github.io/)
+- Firebase Demo - [here](https://devlopr.web.app)
+- Netlify Demo - [here](https://devlopr.netlify.com)
+- Vercel Demo - [here](https://devlopr-jekyll.vercel.app/#/)
+- Heroku Demo - [here](https://devlopr-jekyll.herokuapp.com)
+- AWS Amplify Demo - [here](https://master.d3t30wwddt6jju.amplifyapp.com/)
+
+#### Features :
+
+- Local CMS Admin Support using [Jekyll Admin](https://jekyll.github.io/jekyll-admin/)
+- Headless CMS Admin Support using [Netlify CMS](https://sujaykundu.com/blog/how-to-setup-netlify-cms-with-github-pages-hosted-jekyll-blog/)
+- Supports Latest [Jekyll 4.x](https://jekyllrb.com) and [Bundler](https://bundler.io)
+- Stylesheet built using Sass
+- Comments using [Hyvor](https://talk.hyvor.com/) and [Disqus](https://disqus.com/)
+- SEO-optimized
+- Real Time Search - [Algolia](https://sujaykundu.com/blog/adding-real-time-search-to-jekyll-site-using-algolia/)
+- Sell Stuff (Ecommerce) in your Blog using [Snipcart](https://snipcart.com/)
+- Send Newsletters using [Mailchimp](https://mailchimp.com/)
+- Contact Forms Support for [Getform](https://getform.io), [Formspree](https://formspree.io/)
+- Coding Activity using [Wakatime](https://wakatime.com/)
+- Hosting Support for [Github Pages](https://pages.github.com), [Netlify](https://netlify.com), [Vercel](https://vercel.com), [Heroku](https://heroku.com), [AWS Amplify](aws.amplify.com), [Firebase](https://firebase.com)
+- CI/CD Support using [Travis CI](https://sujaykundu.com/blog/deploy-jekyll-blog-using-github-pages-and-travis-ci/)
+
+#### Jekyll Admin
+You can easily manage the site locally using the Jekyll admin : [http://localhost:4000/admin](http://localhost:4000/admin)
+
+![Jekyll Admin](https://github.com/sujaykundu777/devlopr-jekyll/blob/master/assets/img/jekyll-admin.PNG?raw=true)
+
+
+You can check out for all changelogs [here](https://devlopr.olvy.co/)
+
+## Pull the latest changes
+
+```s
+git remote -v
+git remote add upstream https://github.com/sujaykundu777/devlopr-jekyll.git
+git fetch upstream
+git checkout master
+git merge upstream/master
+git push
+```
+
+## Using Docker :
+
+Building the Image :
+
+`docker build -t my-devlopr-jekyll-blog .`
+
+Running the container :
+
+`docker run -d -p 4000:4000 -it --volume="$PWD:/srv/jekyll" --name "my_blog" my-devlopr-jekyll-blog:latest jekyll serve --watch`
+
+## Using Docker Compose :
+
+### Development :
+
+You can run the app in development mode : (your changes will be reflected --watch moded)
+
+Serve the site at http://localhost:4000 :
+
+`docker-compose -f docker-compose-dev.yml up --build --remove-orphans`
+
+### Production :
+
+You can run the app in production mode : (your changes will be reflected --watch moded)
+
+Serve the site at http://localhost:4000 :
+
+`docker-compose -f docker-compose-prod.yml up --build --remove-orphans`
+
+Stop the app :
+`docker-compose -f docker-compose-prod.yml down`
+Once everything is good and ready to go live -
+
+`docker-compose -f docker-compose-prod.yml up --build --detach`
+
+## Contributors:
+
+This project exists thanks to all the people who contribute.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://sujaykundu.com"><img src="https://avatars.githubusercontent.com/u/10703200?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sujay Kundu</b></sub></a><br /><a href="#infra-sujaykundu777" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#design-sujaykundu777" title="Design">🎨</a> <a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=sujaykundu777" title="Code">💻</a></td>
+    <td align="center"><a href="https://rmrt1n.github.io/"><img src="https://avatars.githubusercontent.com/u/51780559?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ryan Martin</b></sub></a><br /><a href="#infra-rmrt1n" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="http://don't have one"><img src="https://avatars.githubusercontent.com/u/6252713?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jack Wu</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/issues?q=author%3Ajackneer" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/russdreamer"><img src="https://avatars.githubusercontent.com/u/10559538?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Iga Kovtun</b></sub></a><br /><a href="#design-russdreamer" title="Design">🎨</a> <a href="https://github.com/sujaykundu777/devlopr-jekyll/issues?q=author%3Arussdreamer" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://csvance.github.io"><img src="https://avatars.githubusercontent.com/u/6805096?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carroll Vance</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/issues?q=author%3Acsvance" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://tzeny.com"><img src="https://avatars.githubusercontent.com/u/6255363?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Tenescu</b></sub></a><br /><a href="#design-Tzeny" title="Design">🎨</a> <a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=Tzeny" title="Code">💻</a></td>
+    <td align="center"><a href="http://raghwendra-dey.github.io"><img src="https://avatars.githubusercontent.com/u/45457947?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raghwendra Dey</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/issues?q=author%3ARaghwendra-Dey" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.dsantini.it"><img src="https://avatars.githubusercontent.com/u/8406735?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniele Santini</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/issues?q=author%3ADanysan1" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://chivaszx.netlify.app"><img src="https://avatars.githubusercontent.com/u/57280995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chivaszx</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=aekkasit114" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/resynth1943"><img src="https://avatars.githubusercontent.com/u/49915996?v=4?s=100" width="100px;" alt=""/><br /><sub><b>resynth1943</b></sub></a><br /><a href="#infra-resynth1943" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=resynth1943" title="Code">💻</a></td>
+    <td align="center"><a href="https://blakedrumm.com"><img src="https://avatars.githubusercontent.com/u/17127926?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Blake Drumm</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=x-limitless-x" title="Code">💻</a></td>
+    <td align="center"><a href="https://blakedrumm.com"><img src="https://avatars.githubusercontent.com/u/63755224?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Blake Drumm</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=blakedrumm" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://ledmington.github.io"><img src="https://avatars.githubusercontent.com/u/68538713?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Filippo Barbari</b></sub></a><br /><a href="https://github.com/sujaykundu777/devlopr-jekyll/commits?author=Ledmington" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+Contributions are more than just welcome. Fork this repo and create a new branch, then submit a pull request
+
+- 1.Fork it [http://github.com/sujaykundu777/devlopr-jekyll/fork](http://github.com/sujaykundu777/devlopr-jekyll/fork )
+
+- 2.Create your feature branch
+`git checkout -b my-new-feature`
+
+- 3.Commit your changes
+`git commit -am 'Add some feature'`
+
+- 4.Push to the branch
+`git push origin my-new-feature`
+
+- 5.Create new Pull Request
+
+## Support this Project:
+
+Back this project by Donating to our [Open Collective](https://opencollective.com/devlopr-jekyll/donate) or if you like my work[Buymeacoffee](https://buymeacoffee.com/sujaykundu).
+
+Thanks to all our Backers ! [Become a Backer](https://opencollective.com/devlopr-jekyll/donate)
+
+<a href="https://opencollective.com/devlopr-jekyll#backers" target="_blank"><img src="https://opencollective.com/devlopr-jekyll/backers.svg?width=890" /></a>
+
+<a href="https://opencollective.com/devlopr-jekyll#backers" target="_blank"><img src="https://opencollective.com/devlopr-jekyll/tiers/backer.svg?avatarHeight=36" /></a>
+
+### For Help :
+
+You can contact me, if you need any help via [Email](mailto:sujaykundu777@gmail.com). If you like the project. Don't forget to :star: !
+
+## Licence
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT). You can do anything you want, including projects for your clients, as long as you mention an attribution back (credit links in footer). See the [Licence](https://github.com/sujaykundu777/devlopr-jekyll/blob/master/LICENSE) file
+
