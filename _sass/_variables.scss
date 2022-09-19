@@ -1,22 +1,22 @@
-// Copyright (c) 2019 Florian Klampfer <https://qwtel.com/>
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+// Variables
+//-------------------------------
 
-$gray: #777;
-$gray-bg: rgba(0,0,0,.025);
-$gray-text: #666;
-$menu-text: #bbb;
-$body-color: #333;
-$body-bg: #fff;
-$border-color: #ebebeb;
+$sans-serif: -apple-system, BlinkMacSystemFont, San Francisco Text, Helvetica, Arial, "Helvetica Neue", Roboto, "Segoe UI", sans-serif;
+$serif: Menlo, Monaco, Courier, monospace, serif;
+// $base-font-family: $sans-serif;
+$base-font-weight: 400;
+$base-font-weight-bold: 700;
+
+$base-font-size: 20px;
+$mobile-font-size: 18px;
+$lead-font-size: 1.15em;
+$blog-title-size: 2.5rem;
+$post-title-size: 4.25rem;
+$base-line-height: 1.6;
+$code-line-height: 1.4;
+
+$footnote-font-size: 0.75em;
+$magic: 1.618em;
+
+$hero-heading-color: #fff;
+$hero-date-color: #ccc;
