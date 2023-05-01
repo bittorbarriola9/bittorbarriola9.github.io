@@ -1,0 +1,23 @@
+---
+name: Bittor Barriola
+username: bittorbarriola9
+bio: "Hi I am Bittor, the one behind this website."
+site: http://bittorbarriola9.github.io
+avatar: bittorbarriola9.png
+email: bittorbarriola9@gmail.com
+social:
+    - title: "github"
+      url: "https://github.com/bittorbarriola9"
+    - title: "linkedin"
+      url: "https://www.linkedin.com/bittorbarriolaartieda"
+    - title: "youtube"
+      url: "https://www.youtube.com/channel/UCSfLBFFfNU9r6ihfei6VeJw"
+    - title: "facebook"
+      url: "https://www.facebook.com/bittorbarriola9"
+    - title: "twitter"
+      url: "https://www.twitter.com/bittorbarriola9"
+    - title: "instagram"
+      url: "https://instagram.com/bittorbarriola9"
+    - title: "telegram"
+      url: "https://telegram.com/bittorbarriola9"
+---
