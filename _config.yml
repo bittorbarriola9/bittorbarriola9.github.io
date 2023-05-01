@@ -16,8 +16,6 @@ urls:
       url: /blog
     - text: Gallery
       url: /gallery
-    - text: Coffee Corner
-      url: /coffeecorner
     - text: Shop
       url : /shop
     - text: Contact
