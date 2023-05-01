@@ -16,11 +16,12 @@ urls:
       url: /blog
     - text: Gallery
       url: /gallery
-#    - text: Shop
-#      url : /shop
+    - text: Coffee Corner
+      url: /coffeecorner
+    - text: Shop
+      url : /shop
     - text: Contact
       url : /contact
-
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
@@ -200,7 +201,6 @@ jekyll_admin:
   #   - configuration
   homepage: "posts"
 
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -250,6 +250,5 @@ exclude:
   - assets/bower_components/lightgallery/test/lightgallery.html
   - assets/bower_components/masonry-layout/README.md
   - assets/bower_components/imagesloaded/README.md
-
 
 destination: ./build
