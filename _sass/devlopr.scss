@@ -12,7 +12,7 @@ html[data-theme="dark"] {
     --highlight-color: hsl(0, 0%, 60%);
     --light-border-color: hsl(0, 0%, 30%);
     --light-text-color: rgb(199, 199, 204);
-    --link-color: #f69801;
+    --link-color: rgb(0, 112, 201);
     --link-color-visited: hsl(250, 100%, 60%);
     --main-background-color: rgb(28, 28, 30);
     --main-text-color: rgb(139, 139, 139);
@@ -53,9 +53,9 @@ html[data-theme="light"] {
         --highlight-color: hsl(0, 0%, 60%);
         --light-border-color: hsl(0, 0%, 30%);
         --light-text-color: rgb(199, 199, 204);
-        --link-color: #f69801;
+        --link-color: rgb(0, 112, 201);
         --nav-color: #131313;
-        --search-color: #FF7901;
+        --search-color: rgb(0, 112, 201);
         --nav-link-color: rgba(255, 255, 255, .5);
         --link-color-visited: hsl(250, 100%, 60%);
         --main-background-color: rgb(28, 28, 30);
@@ -75,7 +75,7 @@ html[data-theme="light"] {
         --highlight-color: hsl(0, 0%, 80%);
         --light-border-color: rgb(230, 230, 230);
         --light-text-color: rgb(72, 72, 74);
-        --link-color: #ca6521;
+        --link-color: rgb(0, 112, 201);
         --nav-color: #ffffff;
         --nav-link-color: #111111;
         --search-color: #ababab;
@@ -111,12 +111,12 @@ ol, ul {
 
 /* Progress bar */
 .progressline .bar {
-    background: #f69801;
+    background: rgb(0, 112, 201);
 }
 
 /* On scroll progress bar */
 #progress-bar {
-    background: linear-gradient(to right, #f69801 var(--progress), transparent 0);
+    background: linear-gradient(to right, rgb(0, 112, 201) var(--progress), transparent 0);
     height: 5px;
     position: fixed;
     width: 100%;
@@ -240,7 +240,7 @@ header {
 }
 
 .navbar-dark .navbar-brand {
-    color: #ff7601 !important;
+    color: rgb(0, 112, 201) !important;
 }
 .navbar-dark .navbar-nav .nav-link {
     color: var(--nav-link-color) !important;
@@ -349,13 +349,13 @@ header {
         position: absolute;
         top: 10%;
         width: 100%;
-        color: #f69801;
+        color: rgb(0, 112, 201);
         background: rgba(0, 0, 0, 0);
         font-size: 30px;
         font-weight: 300;
         text-align: center;
         border: 0px;
-        border-bottom: 1px dashed #ffa000;
+        border-bottom: 1px dashed rgb(0, 112, 201);
         margin: 0px auto;
         margin-top: -51px;
         padding-left: 30px;
@@ -364,7 +364,7 @@ header {
 
       &:focus {
         border: 0;
-        border-bottom: 1px dashed #ffa000;
+        border-bottom: 1px dashed rgb(0, 112, 201);
       }
     }
 
@@ -405,12 +405,12 @@ header {
         text-decoration: none;
         font-size: 25px;
         line-height: 25px;
-        color: orange !important;
+        color: rgb(0, 112, 201) !important;
         text-decoration: none;
       }
 
       &__date {
-        color: orange;
+        color: rgb(0, 112, 201);
         font-size: 15px;
         line-height: 15px;
       }
@@ -590,7 +590,7 @@ header {
 }
 
 .lg-progress-bar .lg-progress {
-    background-color: #db980f !important;
+    background-color: rgb(0, 112, 201) !important;
     height: 4px;
     width: 0;
 }
@@ -652,7 +652,7 @@ header {
 }
 .article-card-link, .article-card-link:hover{
     text-decoration: none;
-    color: orange !important;
+    color: rgb(0, 112, 201) !important;
 }
 .article-card{
     list-style-type: none;
