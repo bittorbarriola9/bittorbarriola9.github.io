@@ -87,11 +87,6 @@ author_project_details:
                 project_description: My webpage hosted in GitHub Pages, built using Jekyll 
                 project_url: https://bittorbarriola9.github.io
                 visibility: true
-              - project_thumbnail: hack4r.PNG
-                project_title: Hack4r
-                project_description: A Platform built for Hackers and Penetration Testers
-                project_url: https://hack4r.com
-                visibility: false
 
 # social links
 twitter_username: bittorbarriola9
