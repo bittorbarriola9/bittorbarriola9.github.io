@@ -1,8 +1,6 @@
 title: bittorbarriola9
 subtitle: 
-description: >- # this means to ignore newlines until "baseurl:"
-  devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
-
+description: ""
 url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -34,69 +32,69 @@ hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg.
 
 # Experiences
 author_work_experiences:
-            - company_name: BSH [Jan 2022 - ... ]
-              company_logo: logo_BSH.png
-              company_url: https://www.bsh-group.com/
-              designation: IT-Technician, Software Engineer
-              description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
-              visibility: true
-            - company_name: Tigloo (Apr 2021 - Dec 2021)
-              company_logo: logo_tigloo.jpg
-              company_url: https://www.tigloo.es/
-              designation: IT-Technician, Software Engineer for BSH
-              description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
-              visibility: true
-            - company_name: BSH [Feb 2020 - Mar 2021]
-              company_logo: logo_BSH.png
-              company_url: https://www.bsh-group.com/
-              designation: Scholarship
-              description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
-              visibility: true    
-            - company_name: CBL Logística [Mar 2018 - Jan 2020]
-              company_logo: logo_CBL.png
-              company_url: https://www.cbl-logistica.com/
-              designation: Warehouse Employee
-              description: Trucks unloading / Warehouse organization / Shipments preparation
-              visibility: true
+  - company_name: BSH [Jan 2022 - ... ]
+    company_logo: logo_BSH.png
+    company_url: https://www.bsh-group.com/
+    designation: IT-Technician, Software Engineer
+    description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
+    visibility: true
+  - company_name: Tigloo (Apr 2021 - Dec 2021)
+    company_logo: logo_tigloo.jpg
+    company_url: https://www.tigloo.es/
+    designation: IT-Technician, Software Engineer for BSH
+    description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
+    visibility: true
+  - company_name: BSH [Feb 2020 - Mar 2021]
+    company_logo: logo_BSH.png
+    company_url: https://www.bsh-group.com/
+    designation: Scholarship
+    description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
+    visibility: true    
+  - company_name: CBL Logística [Mar 2018 - Jan 2020]
+    company_logo: logo_CBL.png
+    company_url: https://www.cbl-logistica.com/
+    designation: Warehouse Employee
+    description: Trucks unloading / Warehouse organization / Shipments preparation
+    visibility: true
 
 # Education
 author_education_details:
-              - college_logo: logo_upna.png
-                college_name: Universidad Púbblica de Navarra
-                college_url: https://www.unavarra.es/portada
-                college_degree: Mechanical Engineering
-                description: ETSIIIT
-                visibility: true
-              - college_logo: logo_ies_zizur.jpg
-                college_name: IES Zizur BHI
-                college_url: https://ieszizurbhi.educacion.navarra.es/web/
-                college_degree: High School Degree and Bachelor
-                description: Technology Area
-                visibility: true
-              - college_logo: logo_erreniega.jpg
-                college_name: Erreniega IP
-                college_url: https://erreniegaip.educacion.navarra.es/web/es/
-                college_degree: Primary School
-                description: First knownledges
-                visibility: true
+  - college_logo: logo_upna.png
+    college_name: Universidad Púbblica de Navarra
+    college_url: https://www.unavarra.es/portada
+    college_degree: Mechanical Engineering
+    description: ETSIIIT
+    visibility: true
+  - college_logo: logo_ies_zizur.jpg
+    college_name: IES Zizur BHI
+    college_url: https://ieszizurbhi.educacion.navarra.es/web/
+    college_degree: High School Degree and Bachelor
+    description: Technology Area
+    visibility: true
+  - college_logo: logo_erreniega.jpg
+    college_name: Erreniega IP
+    college_url: https://erreniegaip.educacion.navarra.es/web/es/
+    college_degree: Primary School
+    description: First knownledges
+    visibility: true
 
 # Projects
 author_project_details:
-              - project_thumbnail: project_jekyll.png
-                project_title: bittorbarriola9
-                project_description: My webpage hosted in GitHub Pages, built using Jekyll 
-                project_url: https://bittorbarriola9.github.io
-                visibility: true
+  - project_thumbnail: project_jekyll.png
+    project_title: bittorbarriola9
+    project_description: My webpage hosted in GitHub Pages, built using Jekyll 
+    project_url: https://bittorbarriola9.github.io
+    visibility: true
 
 # social links
 twitter_username: bittorbarriola9
 github_username:  bittorbarriola9
 facebook_username: bittorbarriola9
 linkedin_username: bittorbarriolaartieda
-#behance_username: johndoe
 instagram_username: bittorbarriola9
-#medium_username: johndoe
 telegram_username: bittorbarriola9
+#behance_username: johndoe
+#medium_username: johndoe
 #dribbble_username: johndoe
 #flickr_username: johndoe
 
@@ -106,10 +104,10 @@ telegram_username: bittorbarriola9
 hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
-wakatime_username: sujaykundu777
+#wakatime_username: sujaykundu777
 
 # mailchimp embedded form url (newsletter):
-mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
+#mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
 
 # contact form - (choose formspress or getform)
 # getform_endpoint: 83b703c3-9e47-4df4-ac55-e24d7eb02abc
