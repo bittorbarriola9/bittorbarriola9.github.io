@@ -8,12 +8,11 @@
     .profile-img {
       width: 150px;
       height: 150px;
-      margin-left: 20px;
       border-radius: 50%;
     }
   
     .profile-name {
-      margin-top: 20px;
+      margin-top: 10px;
     }
   
     .profile-bio,
@@ -59,12 +58,13 @@
   #author_projects {
     .project-img {
       text-align: center;
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
     }
   
     #project-card {
-      margin-top: 30px;
+      margin-top: 10px;
     }
   
     .project-link {
@@ -74,8 +74,8 @@
   
   .company-logo {
     text-align: center;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 20px;
   }
   
@@ -92,7 +92,7 @@
   /* Homepage project cards*/
   
   #project-card {
-    margin: 15px;
+    margin: 0px;
   }
   
   .project_thumbnail {
