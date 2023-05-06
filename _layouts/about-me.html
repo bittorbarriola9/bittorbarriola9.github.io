@@ -67,9 +67,9 @@ layout: default
           engineering = site.data.skills.engineering
           others = site.data.skills.others
       -%}
-    </div>
-    
+    </div>    
   </div>
+  
   <div class="col-lg-8">
     {% if site.author_bio %}
       <div class="card">
@@ -77,7 +77,7 @@ layout: default
         <p>{{ site.author_bio }}</p>
       </div>
     {% endif %}
-    
+
     {% if site.show_author_project_details == true %}
     <div id="author_projects" class="card">
       <h1>Projects</h1>
@@ -85,10 +85,10 @@ layout: default
       {% for project in site.author_project_details %}
         {% if project.visibility == true %}
           <div class="row" id="project-card">
-            <div class="col-md-6 center col-lg-5 col-xl-4">
+            <div class="col-md-6 center col-lg-5 col-xl-2">
               <img src="{{site.url}}{{site.baseurl}}/assets/img/{{project.project_thumbnail}}" class="project-img"/>
             </div>
-            <div class="col-md-6 center col-lg-7 col-xl-8">
+            <div class="col-md-6 center col-lg-7 col-xl-10">
               <h4 class="experience-title">{{ project.project_title }}</h4>
               <h6 class="experience-info">{{ project.project_info}}</h6>
               <p class="experience-desc">{{ project.project_description }}</p>
@@ -107,10 +107,10 @@ layout: default
         {% for exp in site.author_work_experiences %}
           {% if exp.visibility == true %}
             <div class="row">
-              <div class="col-md-6 center col-lg-5 col-xl-4">
+              <div class="col-md-6 center col-lg-5 col-xl-2">
                 <img src="{{site.url}}{{site.baseurl}}/assets/img/{{ exp.company_logo }}" class="company-logo"/>
               </div>
-              <div class="col-md-6 center col-lg-7 col-xl-8">
+              <div class="col-md-6 center col-lg-7 col-xl-10">
                 <h4 class="experience-title">{{ exp.designation }}</h4>
                 <h6 class="experience-info">{{ exp.company_name}}</h6>
                 <p class="experience-desc">{{ exp.description }}</p>
@@ -129,10 +129,10 @@ layout: default
         {% for detail in site.author_education_details %}
           {% if detail.visibility == true %}
             <div class="row">
-              <div class="col-md-6 center col-lg-5 col-xl-4">
+              <div class="col-md-6 center col-lg-5 col-xl-2">
                 <img src="{{site.url}}{{site.baseurl}}/assets/img/{{ detail.college_logo}}" class="company-logo"/>
               </div>
-              <div class="col-md-6 center col-lg-7 col-xl-8">
+              <div class="col-md-6 center col-lg-7 col-xl-10">
                 <h4 class="experience-title">{{detail.college_degree }}</h4>
                 <h6 class="experience-info">{{detail.college_name}}</h6>
                 <p class="experience-desc">{{detail.description}}</p>
