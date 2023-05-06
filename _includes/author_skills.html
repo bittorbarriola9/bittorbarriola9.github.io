@@ -1,6 +1,65 @@
-<p> Python, .Net, VisualBasic</p>
-<p> HTML, CSS, JavaScript</p>
-<p> SQL, PowerBI</p>
-<p> Microsoft Office, Google Suite </p>
-<p> Adobe Photoshop, Adobe Premiere </p>
-<p> Windows, MacOS, Linux, Android </p>
+<h3>OS</h3>
+<div class="skills_wrapper_div">
+  {%- for OS in include.OS.OS_icons -%}
+    <img
+      alt="OS Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.OS.icon_path }}/{{ OS_icon.filename }}"
+      title="{{ OS_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Languages</h3>
+<div class="skills_wrapper_div">
+  {%- for language_icon in include.known-languages.language_icons -%}
+    <img
+      alt="Known Language Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.known-languages.icon_path }}/{{ language_icon.filename }}"
+      title="{{ language_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Programming Languages</h3>
+<div class="skills_wrapper_div">
+  {%- for language_icon in include.languages-learning.language_icons -%}
+    <img
+      alt="Language Learning Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.languages-learning.icon_path }}/{{ language_icon.filename }}"
+      title="{{ language_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Frameworks/Tools</h3>
+<div class="skills_wrapper_div">
+  {%- for framework_system_icon in include.frameworks-systems.framework_system_icons -%}
+    <img
+      alt="Framework/Tool Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.frameworks-systems.icon_path }}/{{ framework_system_icon.filename }}"
+      title="{{ framework_system_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Editors</h3>
+<div class="skills_wrapper_div">
+  {%- for editor_icon in include.editors.editor_icons -%}
+    <img
+      alt="Editor Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.editors.icon_path }}/{{ editor_icon.filename }}"
+      title="{{ editor_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Others</h3>
+<div class="skills_wrapper_div">
+  {%- for others_icon in include.others.others_icons -%}
+    <img
+      alt="Others Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.others.icon_path }}/{{ others_icon.filename }}"
+      title="{{ others_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
