@@ -1,0 +1,12 @@
+icon_path: skills/programming
+programming_icons:
+  - title: Python
+    filename: Python.svg
+  - title: HTML
+    filename: HTML.svg
+  - title: CSS
+    filename: CSS.svg
+  - title: JavaScript
+    filename: JavaScript.svg
+  - title: SQL
+    filename: SQL.png

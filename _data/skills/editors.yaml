@@ -1,0 +1,6 @@
+icon_path: skills/editors
+editor_icons:
+  - title: VS Code
+    filename: VSCode.svg
+  - title: Visual Studio
+    filename: VisualStudio.svg

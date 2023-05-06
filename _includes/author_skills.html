@@ -1,6 +1,6 @@
 <h3>OS</h3>
 <div class="skills_wrapper_div">
-  {%- for OS in include.OS.OS_icons -%}
+  {%- for OS_icon in include.OS.OS_icons -%}
     <img
       alt="OS Icon"
       src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.OS.icon_path }}/{{ OS_icon.filename }}"
@@ -11,10 +11,10 @@
 
 <h3>Languages</h3>
 <div class="skills_wrapper_div">
-  {%- for language_icon in include.known-languages.language_icons -%}
+  {%- for language_icon in include.languages.language_icons -%}
     <img
       alt="Known Language Icon"
-      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.known-languages.icon_path }}/{{ language_icon.filename }}"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.languages.icon_path }}/{{ language_icon.filename }}"
       title="{{ language_icon.title }}"
     />
   {%- endfor -%}
@@ -22,22 +22,22 @@
 
 <h3>Programming Languages</h3>
 <div class="skills_wrapper_div">
-  {%- for language_icon in include.languages-learning.language_icons -%}
+  {%- for language_icon in include.programming.programming_icons -%}
     <img
       alt="Language Learning Icon"
-      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.languages-learning.icon_path }}/{{ language_icon.filename }}"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.programming.icon_path }}/{{ language_icon.filename }}"
       title="{{ language_icon.title }}"
     />
   {%- endfor -%}
 </div>
 
-<h3>Frameworks/Tools</h3>
+<h3>Frameworks & Tools</h3>
 <div class="skills_wrapper_div">
-  {%- for framework_system_icon in include.frameworks-systems.framework_system_icons -%}
+  {%- for framework_icon in include.frameworks.framework_icons -%}
     <img
       alt="Framework/Tool Icon"
-      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.frameworks-systems.icon_path }}/{{ framework_system_icon.filename }}"
-      title="{{ framework_system_icon.title }}"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.frameworks.icon_path }}/{{ framework_icon.filename }}"
+      title="{{ framework_icon.title }}"
     />
   {%- endfor -%}
 </div>

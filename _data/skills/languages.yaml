@@ -1,0 +1,8 @@
+icon_path: skills/languages
+language_icons:
+  - title: Basque
+    filename: Basque.svg
+  - title: Spanish
+    filename: Spanish.png
+  - title: English
+    filename: English.png

@@ -1,0 +1,10 @@
+icon_path: skills/frameworks
+framework_icons:
+  - title: django
+    filename: django.svg
+  - title: Figma
+    filename: Figma.svg
+  - title: git
+    filename: git.svg
+  - title: Microsoft SSMS
+    filename: MicrosoftSSMS.svg
