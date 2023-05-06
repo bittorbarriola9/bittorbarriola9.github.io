@@ -1,0 +1,14 @@
+icon_path: skills/tools
+tool_icons:
+  - title: Microsoft SSMS
+    filename: MicrosoftSSMS.svg
+  - title: git
+    filename: git.svg
+  - title: PowerBI
+    filename: PowerBI.svg
+  - title: Miro
+    filename: Miro.svg
+  - title: Figma
+    filename: Figma.svg
+  - title: Jira
+    filename: Jira.svg

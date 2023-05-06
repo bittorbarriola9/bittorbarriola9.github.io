@@ -16,20 +16,12 @@ others_icons:
     filename: MicrosoftOffice365.svg
   - title: OneDrive
     filename: MicrosoftOneDrive.svg
-  - title: Jira
-    filename: Jira.svg
   - title: Adobe Photoshop
     filename: AdobePhotoshop.svg
   - title: Adobe Premiere
     filename: AdobePremiere.svg
-  - title: Autocad
-    filename: Autocad.svg
-  - title: Solidworks
-    filename: Solidworks.svg
   - title: Notion
     filename: Notion.svg
-  - title: PowerBI
-    filename: PowerBI.svg
   - title: Gmail
     filename: Gmail.svg
   - title: Google Drive

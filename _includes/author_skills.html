@@ -31,11 +31,11 @@
   {%- endfor -%}
 </div>
 
-<h3>Frameworks & Tools</h3>
+<h3>Frameworks</h3>
 <div class="skills_wrapper_div">
   {%- for framework_icon in include.frameworks.framework_icons -%}
     <img
-      alt="Framework/Tool Icon"
+      alt="Framework Icon"
       src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.frameworks.icon_path }}/{{ framework_icon.filename }}"
       title="{{ framework_icon.title }}"
     />
@@ -49,6 +49,28 @@
       alt="Editor Icon"
       src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.editors.icon_path }}/{{ editor_icon.filename }}"
       title="{{ editor_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Tools</h3>
+<div class="skills_wrapper_div">
+  {%- for tool_icon in include.tools.tool_icons -%}
+    <img
+      alt="Tool Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.tools.icon_path }}/{{ tool_icon.filename }}"
+      title="{{ tool_icon.title }}"
+    />
+  {%- endfor -%}
+</div>
+
+<h3>Engineering</h3>
+<div class="skills_wrapper_div">
+  {%- for software_icon in include.engineering.software_icons -%}
+    <img
+      alt="Engineering Icon"
+      src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ include.engineering.icon_path }}/{{ software_icon.filename }}"
+      title="{{ software_icon.title }}"
     />
   {%- endfor -%}
 </div>

@@ -1,0 +1,14 @@
+icon_path: skills/engineering
+software_icons:
+  - title: Autocad
+    filename: Autocad.svg
+  - title: Solidworks
+    filename: Solidworks.svg
+  - title: Matlab
+    filename: Matlab.svg
+  - title: Ansys
+    filename: Ansys.svg
+  - title: CYPE
+    filename: CYPE.svg
+  - title: Minitab
+    filename: Minitab.svg

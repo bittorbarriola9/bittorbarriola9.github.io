@@ -2,6 +2,8 @@ icon_path: skills/programming
 programming_icons:
   - title: Python
     filename: Python.svg
+  - title: VisualBasic
+    filename: VB.png
   - title: HTML
     filename: HTML.svg
   - title: CSS
