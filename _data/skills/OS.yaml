@@ -1,0 +1,10 @@
+icon_path: skills/OS
+OS_icons:
+  - title: macOS
+    filename: macOS.png
+  - title: Windows
+    filename: Windows.png
+  - title: Android
+    filename: Android.png
+  - title: Linux
+    filename: Linux.png

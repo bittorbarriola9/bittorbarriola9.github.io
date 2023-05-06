@@ -1,0 +1,18 @@
+icon_path: skills/others
+others_icons:
+  - title: Word
+    filename: Word.png
+  - title: Excel
+    filename: Excel.png
+  - title: PowerPoint
+    filename: PowerPoint.png
+  - title: OneNote
+    filename: OneNote.png
+  - title: Outlook
+    filename: Outlook.png
+  - title: Microsoft Teams
+    filename: Microsoft Teams.png
+  - title: Office365
+    filename: Office365.png
+  - title: Jira
+    filename: Jira.png
