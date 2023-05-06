@@ -44,7 +44,18 @@
       font-weight: 600;
     }
   }
-  
+
+  /* Skills section */
+.skills_wrapper_div {
+  flex-direction: row;
+}
+
+.skills_wrapper_div img {
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+}
+
   #author_projects {
     .project-img {
       text-align: center;
