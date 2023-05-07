@@ -30,35 +30,39 @@ author_website_url: "https://bittorbarriola9.github.io"
 typewrite-text: Welcome to my page
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
-# Experiences
-author_work_experiences:
-  - company_name: BSH [Jan 2022 - ... ]
+# Work Experience
+author_work_experience:
+  - company_name: BSH
     company_logo: logo_BSH.png
     company_url: https://www.bsh-group.com/
     designation: IT-Technician, Software Engineer
+    period: [Jan 2022 - ... ]
     description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
     visibility: true
-  - company_name: Tigloo (Apr 2021 - Dec 2021)
+  - company_name: Tigloo
     company_logo: logo_tigloo.jpg
     company_url: https://www.tigloo.es/
     designation: IT-Technician, Software Engineer for BSH
+    period: [Apr 2021 - Dec 2021]
     description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
     visibility: true
-  - company_name: BSH [Feb 2020 - Mar 2021]
+  - company_name: BSH
     company_logo: logo_BSH.png
     company_url: https://www.bsh-group.com/
     designation: Scholarship
+    period: [Feb 2020 - Mar 2021]
     description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
     visibility: true    
-  - company_name: CBL Logística [Mar 2018 - Jan 2020]
+  - company_name: CBL Logística
     company_logo: logo_CBL.png
     company_url: https://www.cbl-logistica.com/
     designation: Warehouse Employee
+    period: [Mar 2018 - Jan 2020]
     description: Trucks unloading / Warehouse organization / Shipments preparation
     visibility: true
 
 # Education
-author_education_details:
+author_education:
   - college_logo: logo_upna.png
     college_name: Universidad Púbblica de Navarra
     college_url: https://www.unavarra.es/portada
@@ -79,12 +83,75 @@ author_education_details:
     visibility: true
 
 # Projects
-author_project_details:
+author_projects:
   - project_thumbnail: project_jekyll.png
     project_title: bittorbarriola9
     project_description: My webpage hosted in GitHub Pages, built using Jekyll 
     project_url: https://bittorbarriola9.github.io
+    repository_url: https://github.com/bittorbarriola9/bittorbarriola9.github.io
     visibility: true
+
+#Others Experiences
+author_other_experiences:
+  - company_name: Ardoi Pilota Elkartea
+    company_logo: logo_ardoi.jpeg
+    company_url: https://www.facebook.com/profile.php?id=100075420652664
+    designation: Kids Sport Campus Monitor
+    period: [2011 - 2018]
+    description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
+    visibility: true
+  - company_name: CF Ardoi
+    company_logo: logo_ardoi.jpeg
+    company_url: https://twitter.com/ardoifutbol?s=20
+    designation: Kids Sport Campus Monitor
+    period: [2019]
+    description: RFID Technology implementation / Indrustrial Device Management / Industrial Labelling
+    visibility: true
+
+#Sport Experience
+author_sports_path:
+  - title: CF Ardoi - 1st Team
+    sport: Football
+    team_name: CF Ardoi
+    logo: logo_3rfef.png
+    period: 2022 - 2023
+    achivements: 
+    url: https://twitter.com/ardoifutbol?s=20
+    visibility: true
+  - title: CF Ardoi - 1st Team
+    sport: Football
+    team_name: CF Ardoi
+    logo: logo_2rfef.jpg
+    period: 2021 - 2022
+    achivements: 
+    url: https://twitter.com/ardoifutbol?s=20
+    visibility: true
+  - title: CF Ardoi - 1st Team
+    sport: Football
+    team_name: CF Ardoi
+    logo: logo_3a.jpeg
+    period: 2016 - 2021
+    achivements: 
+    url: https://twitter.com/ardoifutbol?s=20
+    visibility: true
+  - title: CF Ardoi - Base
+    sport: Football
+    team_name: CF Ardoi
+    logo: logo_ardoi.jpeg
+    period: 2003 - 2016
+    achivements: 
+    url: https://twitter.com/ardoifutbol?s=20
+    visibility: true
+  - title: Ardoi Pilota Elkartea
+    sport: Esku Pilota
+    team_name: Ardoi Pilota Elkartea
+    logo: logo_ardoi.jpeg
+    period: 2002 - 2017
+    achivements: 
+    url: https://www.facebook.com/profile.php?id=100075420652664
+    visibility: true
+
+
 
 # social links
 twitter_username: bittorbarriola9
@@ -101,7 +168,7 @@ telegram_username: bittorbarriola9
 #for comments ( we got Disqus and Hyvor Commenting, uncomment the one you want to use )
 
 # disqus_shortname: sujay-kundu
-hyvor_talk_website_id: 476
+#hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
 #wakatime_username: sujaykundu777
@@ -123,9 +190,11 @@ highlighter: rouge
 permalink: pretty
 
 # Choose what to show ( can be true or false)
-show_author_work_experiences: true
-show_author_education_details: true
-show_author_project_details: true
+show_author_work_experience: true
+show_author_other_experiences: true
+show_author_education: true
+show_author_projects: true
+show_author_sports_path: true
 
 # pagination of posts
 paginate: 4
