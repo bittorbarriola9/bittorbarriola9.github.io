@@ -2,6 +2,7 @@
 layout: page
 title: Guides
 permalink: /blog/categories/guides/
+color: blue
 ---
 
 <h5> Posts by Category : {{ page.title }} </h5>
