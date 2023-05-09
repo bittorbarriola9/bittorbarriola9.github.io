@@ -11,11 +11,14 @@ layout: default
 </script>
 
 <!-- hero section-->
-<div class="home">
-  {%- include hero.html -%}
+<div class="jumbotron">
+  <img class="author-profile-img" src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}"/>
+  <p class="jumbotron-heading">Hi, I am {{site.author}}!</p>
+  <p class="lead" id="typewriteText"></p>
+  <span>
+    {%- include github_star_button.html -%}
+    {%- include github_fork_button.html -%}
+  </span>
+  <br>
+  <span>{%- include twitter_follow_button.html -%}</span>
 </div>
-
-<!-- Recent articles -->
-<!--<div class="col-lg-8 offset-md-2">
-{%- include recent_articles.html -%}
-</div> -->
