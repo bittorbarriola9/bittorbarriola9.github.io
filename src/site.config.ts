@@ -234,7 +234,7 @@ const siteConfig: SiteConfig = {
         description: "Read about my space adventures, explorations and the aliens I've met on my journeys."
     },
     postsPerPage: 2,
-    recentPostLimit: 3
+    recentPostLimit: 0
 };
 
 export default siteConfig;
