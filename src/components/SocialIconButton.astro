@@ -1,0 +1,30 @@
+---
+import Button from "./Button.astro";
+
+type Props = {
+  href: string;
+  label: string;
+  icon: string;
+  class?: string;
+};
+
+const { href, label, icon, class: className } = Astro.props as Props;
+---
+
+<Button
+  href={href}
+  title={label}
+  aria-label={label}
+  class:list={[
+    "group inline-flex aspect-square w-5 items-center justify-center rounded-full border border-gray-500 bg-transparent p-0 text-current transition hover:border-space-red hover:text-space-red dark:hover:border-space-yellow dark:hover:text-space-yellow",
+    className,
+  ]}
+>
+  <img
+    src={icon}
+    alt=""
+    aria-hidden="true"
+    class="h-3.5 w-3.5 object-contain transition group-hover:scale-110 brightness-0 dark:brightness-100"
+  />
+  <span class="sr-only">{label}</span>
+</Button>

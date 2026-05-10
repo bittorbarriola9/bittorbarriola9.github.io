@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import siteConfig from "../site.config";
+import { withBase } from "../utils/helpers";
+
+type SiteIdentityProps = {
+  logoWidth?: number;
+  logoHeight?: number;
+  loading?: "eager" | "lazy";
+  textSize?: "text-base" | "text-xl";
+  class?: string;
+};
+
+const {
+  logoWidth = 32,
+  logoHeight = 32,
+  loading = "eager",
+  textSize = "text-base",
+  class: customClass,
+}: SiteIdentityProps = Astro.props;
+
+const logoSrc = siteConfig.image?.src || withBase("/space-ahead-logo.png");
+const logoAlt = siteConfig.image?.alt || `${siteConfig.title} logo`;
+---
+
+<div class:list={["flex items-center gap-2", customClass]}>
+  <img
+    src={logoSrc}
+    alt={logoAlt}
+    width={logoWidth}
+    height={logoHeight}
+    loading={loading}
+  />
+  <span class:list={["sigmar-ff", textSize]}>{siteConfig.title}</span>
+</div>
