@@ -20,6 +20,12 @@ const heroImage = siteConfig.hero?.image;
     class="jumbo-banner flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
     <div class="w-full sm:w-fit sm:max-w-1/2">
+      <h1 class="sigmar-ff leading-tight text-balance sm:pt-0!">
+        {siteConfig.hero?.title}
+      </h1>
+      <p class="kanit-regular whitespace-pre-line text-balance text-xs sm:text-base">
+        {siteConfig.hero?.text}
+      </p>
       {
         siteConfig.hero?.eyebrowText && (
           <span class="tag rounded-full text-xs px-2 py-0 border border-gray-500 kanit-light">
@@ -27,12 +33,6 @@ const heroImage = siteConfig.hero?.image;
           </span>
         )
       }
-      <h1 class="sigmar-ff leading-tight text-balance sm:pt-0!">
-        {siteConfig.hero?.title}
-      </h1>
-      <p class="kanit-regular whitespace-pre-line text-balance text-xs sm:text-base">
-        {siteConfig.hero?.text}
-      </p>
       <div
         class="flex flex-nowrap items-center gap-2 mt-3 sm:mt-12"
       >
