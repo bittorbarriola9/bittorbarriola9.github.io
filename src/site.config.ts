@@ -143,7 +143,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        eyebrowText: 'bittorbarriola9',
+        eyebrowText: '@bittorbarriola9',
         title: 'Bittor Barriola Artieda',
         text: 
             `🚀 Sport junkie, proud geek and certified workaholic.
