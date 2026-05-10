@@ -32,4 +32,16 @@ export function getPostsByTag(posts: CollectionEntry<'blogs'>[], tagId: string) 
     return filteredPosts;
 }
 
-export const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+export const withBase = (path: string) => {
+    // Preserve external URLs and in-page/hash links.
+    if (/^(https?:)?\/\//.test(path) || path.startsWith('#') || path.startsWith('mailto:') || path.startsWith('tel:')) {
+        return path;
+    }
+
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+        ? import.meta.env.BASE_URL
+        : `${import.meta.env.BASE_URL}/`;
+
+    const normalizedPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${baseUrl}${normalizedPath}`;
+};
