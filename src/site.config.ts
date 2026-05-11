@@ -73,7 +73,7 @@ const siteConfig: SiteConfig = {
     title: 'bittorbarriola9',
     description: 'A personal site built with Astro.js, Tailwind CSS & love by Bittor Barriola',
     image: {
-        src: '/LogoBB.png',
+        src: '/logo_BB.png',
         alt: '👨🏽‍💻 bittorbarriola9 - My personal site, created by Bittor Barriola.'
     },
     headerNavLinks: [
