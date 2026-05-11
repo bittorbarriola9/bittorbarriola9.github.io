@@ -1,24 +1,533 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
-import coverImage from "../assets/images/1.png";
+import SkillsMarquee from "../components/SkillsMarquee.astro";
+import AboutTabs from "../components/AboutTabs.jsx";
+import "../styles/about-tabs.css";
+
+const skillImageModules = import.meta.glob(
+  "../assets/images/skills/*.{png,jpg,jpeg,webp,avif,svg}",
+  { eager: true, import: "default" },
+);
+
+const journeyImageModules = import.meta.glob(
+  "../assets/images/myjourney/*.{png,jpg,jpeg,webp,avif,svg}",
+  { eager: true, import: "default" },
+);
+
+const resolveSkillIcon = (fileName: string) => {
+  const assetPath = `../assets/images/skills/${fileName}`;
+  const loaded = skillImageModules[assetPath] as
+    | string
+    | { src?: string }
+    | undefined;
+
+  if (!loaded) return undefined;
+  return typeof loaded === "string" ? loaded : loaded.src;
+};
+
+const resolveJourneyIcon = (fileName: string) => {
+  const assetPath = `../assets/images/myjourney/${fileName}`;
+  const loaded = journeyImageModules[assetPath] as
+    | string
+    | { src?: string }
+    | undefined;
+
+  if (!loaded) return undefined;
+  return typeof loaded === "string" ? loaded : loaded.src;
+};
+
+const introPreview = `Hi, I'm Bittor - mechanical engineer by diploma, Product Owner by job title, and full-time tech addict by natural instinct. Most people online know me as bittorbarriola9, mostly because apparently using the same username everywhere counts as having a personal brand nowadays.
+
+My work life is basically split into two parallel universes.
+One side is the "serious corporate" world: endless Teams meetings, Outlook emails, Jira tickets, PowerPoint presentations, roadmaps, planning sessions, and trying to make complicated things sound simple without starting another meeting about the meeting.`;
+
+const introExtended = `The other side - the fun side - is my technical playground: VSCode open at all times, GitHub repos, Kubernetes clusters, DevOps stuff, dashboards, automations, integrations... the part of my job that sadly gets smaller over time, but the one where I genuinely lose track of time and enjoy myself the most.
+
+Outside work... well, honestly, I'm still kind of working.
+I'm one of those people constantly testing new tools, apps, AI platforms, gadgets, workflows & automations, productivity hacks, newsletters, podcasts... or anything remotely capable of making life smarter, easier, or more efficient. Some people relax watching Netflix. I relax reorganizing dashboards, discovering AI tools at 1AM, or buying another gadget I absolutely did not need but somehow fully convinced myself was "useful".
+
+I'm also heavily into AI and emerging tech. At this point, half my YouTube recommendations are probably startups nobody has heard of yet and people explaining why AI agents will replace us all by next Tuesday.
+
+And then there's sport - my second operating system.
+futsal, football & padel, principally. I genuinely lost count of how many training sessions and matches I play every week. I currently play in four football teams and three padel teams/leagues, which sounds impressive until you realize it's probably just poor time-management with extra cardio.
+
+Between work, side projects, sports, ideas, podcasts, random investigations, and "quick things" that somehow become three-hour deep dives... sleep is usually the first sacrifice. Not ideal, I know.
+
+And to keep all this running?
+Caffeine. A lot of caffeine.
+I'm a huge coffee fan, and at this point I'm not completely sure whether my projects are powered by passion, curiosity, or espresso-based survival.
+
+This site is basically my little digital space to share projects, ideas, experiments, tech stuff, random discoveries, and probably a few overly ambitious concepts that sounded easier in my head. If you made it this far, feel free to connect, say hi, or send a virtual coffee - statistically speaking, there's a high chance it gets converted into another side project, automation, or unnecessary self-hosted service.`;
+
+const dailyWorkSkills = [
+  { name: "Figma", iconFile: "figma.png" },
+  { name: "VS Code", iconFile: "vs-code.png" },
+  { name: "Visual Studio", iconFile: "visualstudio.png" },
+  { name: "Visual Basic", iconFile: "visualbasic.png" },
+  { name: "C#", iconFile: "csharp.png" },
+  { name: "HTML", iconFile: "html.png" },
+  { name: "JavaScript", iconFile: "javascript.png" },
+  { name: "CSS", iconFile: "css.png" },
+  { name: "SQL", iconFile: "sql.png" },
+  { name: "Python", iconFile: "python.png" },
+  { name: "Flask", iconFile: "flask.webp" },
+  { name: "Django", iconFile: "django.svg" },
+  { name: "Microsoft SSMS", iconFile: "microsoft-ssms.png" },
+  { name: "Git", iconFile: "git.png" },
+  { name: "GitHub", iconFile: "github.png" },
+  { name: "Power BI", iconFile: "powerbi.png" },
+  { name: "Miro", iconFile: "miro.png" },
+  { name: "Mural", iconFile: "mural.png" },
+  { name: "Jira", iconFile: "jira.png" },
+  { name: "Confluence", iconFile: "confluence.png" },
+  { name: "Microsoft Office365", iconFile: "office365.png" },
+  { name: "Rancher", iconFile: "rancher.png" },
+  { name: "Jenkins", iconFile: "jenkins.png" },
+  { name: "Artifactory", iconFile: "artifactory.png" },
+  { name: "Google Cloud Platform", iconFile: "google-cloud.png" },
+];
+
+const coreSkills = [
+  { name: "Euskera", iconFile: "euskera.png" },
+  { name: "Espanol", iconFile: "spanish.png" },
+  { name: "Ingles", iconFile: "english.png" },
+  { name: "Windows", iconFile: "windows.png" },
+  { name: "macOS", iconFile: "macos.png" },
+  { name: "Linux", iconFile: "linux.png" },
+  { name: "Android", iconFile: "android.png" },
+  { name: "AutoCAD", iconFile: "autocad.png" },
+  { name: "SolidWorks", iconFile: "solidworks.png" },
+  { name: "Matlab", iconFile: "matlab.png" },
+  { name: "Ansys", iconFile: "ansys.png" },
+  { name: "CYPE", iconFile: "cype.webp" },
+  { name: "Minitab", iconFile: "minitab.webp" },
+  { name: "RStudio", iconFile: "r.png" },
+];
+
+const afterworkSkills = [
+  { name: "Adobe Premiere", iconFile: "adobe-premiere.png" },
+  { name: "Adobe Photoshop", iconFile: "adobe-photoshop.png" },
+  { name: "Canva", iconFile: "canva.png" },
+  { name: "Notion", iconFile: "notion.png" },
+  { name: "Google Workspace", iconFile: "google.webp" },
+  { name: "Antigravity", iconFile: "antigravity.png" },
+  { name: "ChatGPT", iconFile: "chatgpt.png" },
+  { name: "Claude", iconFile: "claude.png" },
+  { name: "Gemini", iconFile: "gemini.png" },
+  { name: "AI", iconFile: "ai.png" },
+  { name: "TypeScript", iconFile: "typescript.png" },
+  { name: "React", iconFile: "react.png" },
+  { name: "Astro", iconFile: "astro.png" },
+  { name: "Tailwind CSS", iconFile: "tailwindcss.png" },
+];
+
+const mapSkillsWithIcons = (list: { name: string; iconFile: string }[]) =>
+  list.map((skill) => ({
+    name: skill.name,
+    iconSrc: resolveSkillIcon(skill.iconFile),
+    iconAlt: `${skill.name} logo`,
+  }));
+
+const topSkills = mapSkillsWithIcons(dailyWorkSkills);
+const middleSkills = mapSkillsWithIcons(coreSkills);
+const bottomSkills = mapSkillsWithIcons(afterworkSkills);
+const skillsSpeedPerItem = 4;
+
+const cvSections = [
+  {
+    id: "work",
+    label: "Work Experience",
+    title: "Work Experience",
+    items: [
+      {
+        period: "Jan 2022 - Present",
+        role: "IT-Technician, Software Engineer",
+        organization: "BSH",
+        url: "https://www.bsh-group.com/",
+        iconSrc: resolveJourneyIcon("logo_bsh-orange.png"),
+        iconAlt: "BSH logo",
+        description:
+          "RFID technology implementation, industrial device management, and industrial labelling systems in manufacturing environments.",
+      },
+      {
+        period: "Apr 2021 - Dec 2021",
+        role: "IT-Technician, Software Engineer for BSH",
+        organization: "Tigloo",
+        url: "https://www.tigloo.es/",
+        iconSrc: resolveJourneyIcon("logo_tigloo.png"),
+        iconAlt: "Tigloo logo",
+        description:
+          "Delivered software and IT support services for BSH, focused on RFID deployment and plant digitalization workflows.",
+      },
+      {
+        period: "Feb 2020 - Mar 2021",
+        role: "Scholarship",
+        organization: "BSH",
+        url: "https://www.bsh-group.com/",
+        iconSrc: resolveJourneyIcon("logo_bsh-white.png"),
+        iconAlt: "BSH logo",
+        description:
+          "Contributed to RFID implementation, industrial device inventory, and labelling automation as part of the IT team.",
+      },
+      {
+        period: "Mar 2018 - Jan 2020",
+        role: "Warehouse Employee",
+        organization: "CBL Logistica",
+        url: "https://www.cbl-logistica.com/",
+        iconSrc: resolveJourneyIcon("logo_cbl.png"),
+        iconAlt: "CBL Logistica logo",
+        description:
+          "Truck unloading, warehouse organization, and shipment preparation in a high-demand logistics operation.",
+      },
+    ],
+  },
+  {
+    id: "education",
+    label: "Education",
+    title: "Education",
+    items: [
+      {
+        period: "University",
+        role: "Mechanical Engineering",
+        organization: "Universidad Publica de Navarra (UPNA)",
+        url: "https://www.unavarra.es/portada",
+        iconSrc: resolveJourneyIcon("logo_upna.png"),
+        iconAlt: "UPNA logo",
+        description: "ETSIIIT. Strong technical foundation in engineering, systems, and structured problem solving.",
+      },
+      {
+        period: "High School",
+        role: "High School Degree and Bachelor",
+        organization: "IES Zizur BHI",
+        url: "https://ieszizurbhi.educacion.navarra.es/web/",
+        iconSrc: resolveJourneyIcon("logo_ieszizur.png"),
+        iconAlt: "IES Zizur logo",
+        description: "Technology area, with a focus on scientific and technical disciplines.",
+      },
+      {
+        period: "Primary School",
+        role: "Primary School",
+        organization: "Erreniega IP",
+        url: "https://erreniegaip.educacion.navarra.es/web/es/",
+        iconSrc: resolveJourneyIcon("logo_erreniega.png"),
+        iconAlt: "Erreniega logo",
+        description: "First academic foundations and early learning path.",
+      },
+    ],
+  },
+  {
+    id: "projects",
+    label: "Projects",
+    title: "Projects",
+    items: [
+      {
+        period: "Personal",
+        role: "bittorbarriola9.github.io",
+        organization: "GitHub Pages",
+        url: "https://bittorbarriola9.github.io",
+        iconSrc: resolveJourneyIcon("logo_jekyll.png"),
+        iconAlt: "Project thumbnail",
+        description:
+          "Personal website originally built with Jekyll and evolved to Astro. Live: bittorbarriola9.github.io | Repo: github.com/bittorbarriola9/bittorbarriola9.github.io",
+      },
+    ],
+  },
+  {
+    id: "other",
+    label: "Other Experiences",
+    title: "Other Experiences",
+    items: [
+      {
+        period: "2011 - 2018",
+        role: "Kids Sport Campus Monitor",
+        organization: "Ardoi Pilota Elkartea",
+        url: "https://www.facebook.com/profile.php?id=100075420652664",
+        iconSrc: resolveJourneyIcon("logo_ardoi.png"),
+        iconAlt: "Ardoi logo",
+        description:
+          "Managed activities, groups, and sports logistics in youth campus programs.",
+      },
+      {
+        period: "2019",
+        role: "Kids Sport Campus Monitor",
+        organization: "CF Ardoi",
+        url: "https://twitter.com/ardoifutbol?s=20",
+        iconSrc: resolveJourneyIcon("logo_ardoi.png"),
+        iconAlt: "CF Ardoi logo",
+        description:
+          "Supported training sessions and dynamic activities for children in sports campus environments.",
+      },
+    ],
+  },
+  {
+    id: "sport",
+    label: "Sports Path",
+    title: "Sports Path",
+    items: [
+      {
+        period: "2022 - 2023",
+        role: "CF Ardoi - 1st Team",
+        organization: "Football",
+        url: "https://twitter.com/ardoifutbol?s=20",
+        iconSrc: resolveJourneyIcon("logo_3rfef.png"),
+        iconAlt: "3RFEF logo",
+        description:
+          "Competed at 3rd RFEF level and continued building leadership, discipline, and high-performance habits.",
+      },
+      {
+        period: "2021 - 2022",
+        role: "CF Ardoi - 1st Team",
+        organization: "Football",
+        url: "https://twitter.com/ardoifutbol?s=20",
+        iconSrc: resolveJourneyIcon("logo_2rfef.png"),
+        iconAlt: "2RFEF logo",
+        description:
+          "Season in 2nd RFEF structure, combining competitive football with professional development.",
+      },
+      {
+        period: "2016 - 2021",
+        role: "CF Ardoi - 1st Team",
+        organization: "Football",
+        url: "https://twitter.com/ardoifutbol?s=20",
+        iconSrc: resolveJourneyIcon("logo_3a.png"),
+        iconAlt: "3A logo",
+        description:
+          "Long-term progression through competitive categories, focused on consistency and team impact.",
+      },
+      {
+        period: "2003 - 2016",
+        role: "CF Ardoi - Base",
+        organization: "Football",
+        url: "https://twitter.com/ardoifutbol?s=20",
+        iconSrc: resolveJourneyIcon("logo_football.png"),
+        iconAlt: "CF Ardoi logo",
+        description:
+          "Youth academy development years, building technical and tactical fundamentals.",
+      },
+      {
+        period: "2002 - 2017",
+        role: "Ardoi Pilota Elkartea",
+        organization: "Esku Pilota",
+        url: "https://www.facebook.com/profile.php?id=100075420652664",
+        iconSrc: resolveJourneyIcon("logo_eskupilota.png"),
+        iconAlt: "Ardoi Pilota logo",
+        description:
+          "Parallel sport path in Basque handball, reinforcing coordination, discipline, and competitive mindset.",
+      },
+    ],
+  },
+];
 ---
 
-<MainLayout activePage="about" pageTitle={siteConfig.title + " | About"}>
+<MainLayout activePage="about" pageTitle={siteConfig.title + " | About me"}>
   <div class="page-content">
-    <h1 class="sigmar-ff text-balance">{siteConfig.about?.title}</h1>
-    <Image
-      width={1024}
-      height={600}
-      loading="eager"
-      layout="constrained"
-      class="rounded-4xl mb-8 mx-auto"
-      src={coverImage}
-      alt="An Astronaut walking on a terrain"
-    />
-    <p class="kanit-light text-left">
-      {siteConfig.about?.text}
-    </p>
+    <h1 class="sigmar-ff text-balance">About me</h1>
+
+    <section class="about-intro text-left">
+      <p class="kanit-light whitespace-pre-line text-balance text-sm sm:text-base">
+        {introPreview}
+      </p>
+
+      <div
+        id="intro-extended"
+        class="intro-extended kanit-light whitespace-pre-line text-balance text-sm sm:text-base"
+        hidden
+      >
+        {introExtended}
+      </div>
+
+      <div class="intro-toggle-wrap">
+        <button id="intro-toggle" class="intro-toggle-link" type="button" aria-expanded="false">
+          <span class="intro-toggle-label">Need more lore? Continue scrolling the saga ☕</span>
+          <span class="intro-toggle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="my-10">
+      <hr class="border-gray-500/40 mb-5" />
+      <div class="skills-showcase">
+        <SkillsMarquee items={topSkills} secondsPerItem={skillsSpeedPerItem} />
+
+        <div class="skills-middle-row">
+          <SkillsMarquee
+            items={middleSkills}
+            reverse={true}
+            secondsPerItem={skillsSpeedPerItem}
+          />
+          <span class="skills-center-label sigmar-ff text-lg sm:text-2xl" data-label="Skills">Skills</span>
+        </div>
+
+        <SkillsMarquee items={bottomSkills} secondsPerItem={skillsSpeedPerItem} />
+      </div>
+      <hr class="border-gray-500/40 mt-5" />
+    </section>
+
+    <section class="my-10">
+      <h2 class="sigmar-ff text-lg sm:text-2xl pt-0! pb-4!">My Journey</h2>
+      <AboutTabs client:load sections={cvSections} />
+    </section>
   </div>
 </MainLayout>
+
+<script is:inline>
+  const toggleBtn = document.getElementById("intro-toggle");
+  const extended = document.getElementById("intro-extended");
+  const toggleLabel = toggleBtn?.querySelector(".intro-toggle-label");
+
+  if (toggleBtn && extended && toggleLabel) {
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = extended.hasAttribute("hidden");
+
+      if (isHidden) {
+        extended.removeAttribute("hidden");
+        toggleLabel.textContent = "Okay, enough drama. Show less.";
+        toggleBtn.classList.add("is-expanded");
+        toggleBtn.setAttribute("aria-expanded", "true");
+      } else {
+        extended.setAttribute("hidden", "");
+        toggleLabel.textContent = "Need more lore? Continue scrolling the saga ☕";
+        toggleBtn.classList.remove("is-expanded");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>
+
+<style>
+  .about-intro {
+    margin-bottom: 1.25rem;
+  }
+
+  .about-intro p,
+  .intro-extended {
+    margin-bottom: 0.9rem;
+  }
+
+  .intro-toggle-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.1rem;
+    width: 100%;
+  }
+
+  .intro-toggle-link {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: rgba(20, 20, 20, 0.72);
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 0.3rem;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    padding: 0;
+    text-align: center;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .intro-toggle-label {
+    display: block;
+  }
+
+  .intro-toggle-icon {
+    display: inline-flex;
+    opacity: 0.88;
+  }
+
+  .intro-toggle-icon svg {
+    animation: intro-chevron-bounce 1.8s ease-in-out infinite;
+    display: block;
+    height: 1rem;
+    transition: transform 0.2s ease;
+    width: 1rem;
+  }
+
+  .intro-toggle-link.is-expanded .intro-toggle-icon svg {
+    animation: none;
+    transform: rotate(180deg);
+  }
+
+  .intro-toggle-link:hover {
+    color: rgba(20, 20, 20, 0.9);
+  }
+
+  :global(html.dark) .intro-toggle-link {
+    color: rgba(245, 245, 245, 0.76);
+  }
+
+  :global(html.dark) .intro-toggle-link:hover {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  @keyframes intro-chevron-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(3px);
+    }
+    70% {
+      transform: translateY(1px);
+    }
+  }
+
+  .skills-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .skills-middle-row {
+    position: relative;
+  }
+
+  .skills-center-label {
+    color: var(--color-space-yellow);
+    display: inline-block;
+    isolation: isolate;
+    left: 50%;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    text-shadow:
+      0 0 8px rgba(255, 255, 133, 0.35),
+      0 0 16px rgba(255, 255, 133, 0.2);
+  }
+
+  .skills-center-label::before,
+  .skills-center-label::after {
+    content: attr(data-label);
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .skills-center-label::before {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 133, 0.55);
+    filter: blur(1.8px);
+    opacity: 0.95;
+    z-index: -1;
+  }
+
+  .skills-center-label::after {
+    color: rgba(255, 255, 133, 0.35);
+    filter: blur(5px);
+    opacity: 0.65;
+    z-index: -2;
+  }
+
+</style>

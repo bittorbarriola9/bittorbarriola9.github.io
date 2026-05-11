@@ -1,0 +1,134 @@
+.about-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid color-mix(in oklab, currentColor 35%, transparent);
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.45rem 0.9rem;
+  transition: 150ms ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--space-red);
+}
+
+html.dark .tab-btn:hover {
+  border-color: var(--space-yellow);
+}
+
+.tab-btn.active {
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  border-color: currentColor;
+  font-weight: 700;
+}
+
+.tab-panel {
+  border: 1px solid color-mix(in oklab, currentColor 28%, transparent);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.tab-panel h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline-item {
+  column-gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 2.5rem 2px minmax(0, 1fr);
+  align-items: start;
+}
+
+.item-media {
+  align-items: center;
+  border: 1px solid color-mix(in oklab, currentColor 28%, transparent);
+  border-radius: 0.5rem;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  overflow: hidden;
+  width: 2.5rem;
+}
+
+.item-media img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.item-fallback {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.item-divider {
+  background: color-mix(in oklab, currentColor 25%, transparent);
+  border-radius: 9999px;
+  min-height: 100%;
+}
+
+.item-content {
+  min-width: 0;
+}
+
+.period {
+  font-size: 0.78rem;
+  margin: 0 0 0.2rem;
+  opacity: 0.8;
+}
+
+.timeline-item h4 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.org {
+  font-size: 0.82rem;
+  margin: 0.15rem 0 0.45rem;
+  opacity: 0.85;
+}
+
+a.org {
+  display: inline-block;
+}
+
+.desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .timeline-item {
+    column-gap: 0.6rem;
+    grid-template-columns: 2.2rem 2px minmax(0, 1fr);
+  }
+
+  .item-media {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}

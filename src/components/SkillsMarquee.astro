@@ -1,0 +1,131 @@
+---
+type SkillItem = {
+  name: string;
+  iconSrc?: string;
+  iconAlt?: string;
+};
+
+type Props = {
+  items: SkillItem[];
+  reverse?: boolean;
+  durationSeconds?: number;
+  secondsPerItem?: number;
+  class?: string;
+};
+
+const {
+  items,
+  reverse = false,
+  durationSeconds,
+  secondsPerItem = 2.4,
+  class: className,
+} = Astro.props as Props;
+const loopItems = [...items, ...items];
+const computedDuration =
+  durationSeconds ?? Math.max(12, Number((items.length * secondsPerItem).toFixed(2)));
+
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .map((chunk) => chunk[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+---
+
+<div
+  class:list={["skills-marquee", className]}
+  aria-label="Skills carousel"
+  style={`--marquee-duration:${computedDuration}s;--marquee-direction:${
+    reverse ? "reverse" : "normal"
+  };`}
+>
+  <div class="skills-track">
+    {
+      loopItems.map((item) => (
+        <div class="skill-chip" title={item.name}>
+          {
+            item.iconSrc ? (
+              <img
+                class="skill-icon"
+                src={item.iconSrc}
+                alt={item.iconAlt || item.name}
+                loading="lazy"
+              />
+            ) : (
+              <span class="skill-fallback" aria-hidden="true">{getInitials(item.name)}</span>
+            )
+          }
+          <span class="skill-name">{item.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .skills-marquee {
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+  }
+
+  .skills-track {
+    display: flex;
+    width: max-content;
+    gap: 0.75rem;
+    animation: marquee-scroll var(--marquee-duration, 28s) linear infinite;
+    animation-direction: var(--marquee-direction, normal);
+    padding: 0.25rem 0;
+  }
+
+  .skills-marquee:hover .skills-track {
+    animation-play-state: paused;
+  }
+
+  .skill-chip {
+    align-items: center;
+    backdrop-filter: blur(6px);
+    border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
+    border-radius: 9999px;
+    display: inline-flex;
+    gap: 0.45rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  .skill-icon {
+    border-radius: 0.35rem;
+    display: block;
+    height: 1rem;
+    object-fit: contain;
+    width: 1rem;
+  }
+
+  .skill-fallback {
+    align-items: center;
+    border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
+    border-radius: 0.35rem;
+    display: inline-flex;
+    font-size: 0.65rem;
+    font-weight: 700;
+    height: 1rem;
+    justify-content: center;
+    line-height: 1;
+    width: 1rem;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
