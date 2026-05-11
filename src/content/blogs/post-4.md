@@ -1,23 +1,12 @@
 ---
-title: "May the Fourth be with you"
-author: "Astro-naut Sid"
-description: "This post will show up on its own!"
+title: "Road to Tirana..."
+author: "@bittorbarriola9"
+description: "SOCCA Eurocup 2026 Tirana 20/24 May"
 image:
-  url: "../../assets/images/4.jpg"
+  url: "../../assets/images/blogs/2026-05_SoccaEuro.png"
   alt: "The word astro against an illustration of planets and stars."
-pubDate: 2024-02-07
-tags:
-  [
-    "astro",
-    "space",
-    "moon",
-    "dog",
-    "space exploration",
-    "space travel",
-    "movies",
-    "popcorn",
-    "star wars",
-  ]
+pubDate: 2026-05-11
+tags: ["socca", "football", "football6", "spain", "fs5"]
 ---
 
 This is my fourth post should show up with my other blog posts, because `import.meta.glob()` is returning a list of all my posts in order to create my list.
