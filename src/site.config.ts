@@ -233,8 +233,8 @@ const siteConfig: SiteConfig = {
     blog: {
         description: "Read about my space adventures, explorations and the aliens I've met on my journeys."
     },
-    postsPerPage: 2,
-    recentPostLimit: 0
+    postsPerPage: 6,
+    recentPostLimit: 2
 };
 
 export default siteConfig;
