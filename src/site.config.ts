@@ -37,6 +37,7 @@ export type ContactInfo = {
         href?: string;
         email?: string;
     };
+    socialNote?: string;
     socialProfiles?: {
         text?: string;
         href?: string;
@@ -192,12 +193,13 @@ const siteConfig: SiteConfig = {
     },
     contactInfo: {
         title: 'Contact',
-        text: "Hi! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:",
+        text: "👋 Hi there!\n\nIf you've made it this far, congrats, you're officially more curious than 90% of internet visitors. ☕\n\nWhether you want to chat about tech, AI, product, automations, side projects, sports, or just send a random meme that absolutely had to be shared, I'm your guy.\n\nIf you prefer something more direct and less mysterious than smoke signals, you can drop me a line through any of these channels:",
         email: {
-            text: "Drop me an email and I’ll do my best to respond as soon as possible.",
-            href: "mailto:example@example.com",
-            email: "example@example.com"
+            text: "📬 Email me\n\nWorst case: a couple of espressos later, you'll have an answer.",
+            href: "mailto:bittorbarriola9@gmail.com",
+            email: "bittorbarriola9@gmail.com"
         },
+        socialNote: "📲 Or if email feels too 2005, slide into any of my socials below — DMs are open and judgment-free (mostly). Whatever channel works best for you, works for me.",
         socialProfiles: [
             {
             text: 'GitHub',

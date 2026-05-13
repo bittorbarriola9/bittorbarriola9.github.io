@@ -2,7 +2,10 @@
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
-import coverImage from "../assets/images/pixeltrue-space-discovery.svg";
+// 👇 Cambia esta imagen por la tuya.
+// 1. Coloca tu archivo en: src/assets/images/contact/<tu-imagen>.(png|jpg|jpeg|webp|svg)
+// 2. Actualiza la línea de abajo con la ruta correcta.
+import coverImage from "../assets/images/contact/contact-cover.png";
 ---
 
 <MainLayout activePage="contact" pageTitle={siteConfig.title + " | Contact"}>
@@ -13,13 +16,12 @@ import coverImage from "../assets/images/pixeltrue-space-discovery.svg";
       height={300}
       loading="eager"
       layout="fixed"
-      class="rounded-4xl mb-8 mx-auto grayscale-75 saturate-200"
+      class="rounded-4xl mb-8 mx-auto"
       src={coverImage}
-      alt="Space envelop"
+      alt="Contact illustration"
     />
-    <div class="flex flex-col">
-      <!-- <Image width={1024} height={600} loading="eager" layout="constrained" class="rounded-4xl mb-8 mx-auto" src={coverImage} alt="An Astronaut walking on a terrain"/> -->
-      <p class="font-light text-left text-balance">
+    <div class="flex flex-col gap-4">
+      <p class="font-light text-left text-balance whitespace-pre-line">
         {siteConfig.contactInfo?.text}
       </p>
       <p class="font-light text-left">
@@ -31,11 +33,16 @@ import coverImage from "../assets/images/pixeltrue-space-discovery.svg";
           {siteConfig.contactInfo?.email?.email}
         </a>
       </p>
-      <p class="font-bold text-left flex flex-col sm:flex-row">
+      {siteConfig.contactInfo?.socialNote && (
+        <p class="font-light text-left text-balance">
+          {siteConfig.contactInfo.socialNote}
+        </p>
+      )}
+      <p class="font-bold text-left flex flex-col sm:flex-row sm:flex-wrap sm:items-center">
         Social Profiles:
         {
           siteConfig.contactInfo?.socialProfiles?.map((profile) => (
-            <a href={profile.href} class="font-light text-left ml-4">
+            <a href={profile.href} class="font-light text-left ml-0 sm:ml-4" target="_blank">
               {profile.text}
             </a>
           ))
