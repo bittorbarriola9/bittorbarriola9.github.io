@@ -15,7 +15,7 @@ type LayoutProps = {
 const {
   pageTitle,
   activePage,
-  showSubscribeForm = true,
+  showSubscribeForm = false,
 } = Astro.props as LayoutProps;
 
 const faviconHref = siteConfig.image?.src || withBase("/space-ahead-logo.png");
