@@ -42,6 +42,10 @@ const faviconHref = siteConfig.image?.src || withBase("/space-ahead-logo.png");
       title={siteConfig.title + " - RSS Feed"}
       href={new URL(withBase("/rss.xml"), Astro.site)}
     />
+
+    <!-- Umami Analytics -->
+     <script defer src="https://cloud.umami.is/script.js" data-website-id="88ebcce7-2225-4f07-8986-701f9b12c4ef"></script>
+     
     <title>{pageTitle}</title>
   </head>
   <body>
